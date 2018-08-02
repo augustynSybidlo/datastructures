@@ -10,9 +10,26 @@ public class CustomQueue {
         this.size = 0;
     }
 
+    public void enqueue (String value) {
+        if (head == null) {
+            head = new Node(value);
+            tail = head;
+        } else {
+            tail.nextNode = new Node(value);
+            tail = tail.nextNode;
+        }
+        incrementSize();
+    }
+
 
     
+    private void incrementSize() {
+        size++;
+    }
 
+    private void decrementSize() {
+        size--;
+    }
 
     /*
     Inner class Node holds actual data kept in queue.
