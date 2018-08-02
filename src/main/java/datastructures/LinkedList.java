@@ -85,6 +85,10 @@ public class LinkedList<T> {
         return contains;
     }
 
+    public int getLength() {
+        return length;
+    }
+
     private void incrementLength() {
         this.length++;
     }
