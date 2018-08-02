@@ -72,6 +72,18 @@ public class LinkedList<T> {
         }
     }
 
+    public boolean contains(T data) {
+        Node pointer = head;
+        boolean contains = false;
+
+        while (pointer != null) {
+            if (pointer.data.equals(data)) {
+                contains = true;
+            }
+            pointer = pointer.next;
+        }
+        return contains;
+    }
 
     private void incrementLength() {
         this.length++;
