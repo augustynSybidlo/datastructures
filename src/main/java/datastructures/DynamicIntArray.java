@@ -33,6 +33,15 @@ public class DynamicIntArray {
         }
     }
 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int x = 0; x < lastIndex; x++) {
+            String newElement = " " + String.valueOf(array[x]);
+            sb.append(newElement);
+        }
+        return sb.toString();
+    }
+
     private void changeCapacity() {
         if (lastIndex == (array.length-1)) {
             int newSize = array.length * 2;
