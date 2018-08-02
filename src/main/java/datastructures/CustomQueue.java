@@ -26,6 +26,10 @@ public class CustomQueue {
         return head.value;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
 
     private void incrementSize() {
         size++;
