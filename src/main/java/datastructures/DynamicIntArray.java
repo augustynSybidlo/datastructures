@@ -33,6 +33,11 @@ public class DynamicIntArray {
         }
     }
 
+    public void insert(int index, int element) {
+        if (index > lastIndex) add(element);
+        else insertAt(index, element);
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int x = 0; x < lastIndex; x++) {
@@ -59,6 +64,14 @@ public class DynamicIntArray {
         for (int i = index; i < lastIndex; i++) {
             array[i] = array[i+1];
         }
+    }
+
+    private void insertAt(int index, int element) {
+        for (int i = lastIndex; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = element;
+        lastIndex++;
     }
 
 }
