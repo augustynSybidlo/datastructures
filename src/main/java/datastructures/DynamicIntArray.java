@@ -7,6 +7,10 @@ public class DynamicIntArray {
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
 
+    public DynamicIntArray() {
+        this.array = new int[DEFAULT_CAPACITY];
+    }
+
     public DynamicIntArray(int i) {
         this.array = new int[i];
     }
