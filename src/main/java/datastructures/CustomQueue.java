@@ -21,6 +21,15 @@ public class CustomQueue {
         incrementSize();
     }
 
+    public String dequeue() throws EmptyQueueException {
+        if (isEmpty()) throw new EmptyQueueException("Queue is Empty");
+
+        String result = head.value;
+        head = head.nextNode;
+        decrementSize();
+        return result;
+    }
+
     public String peek() throws EmptyQueueException {
         if (isEmpty()) throw new EmptyQueueException("Queue is Empty");
         return head.value;
@@ -29,6 +38,8 @@ public class CustomQueue {
     public boolean isEmpty() {
         return size == 0;
     }
+
+
 
 
     private void incrementSize() {
