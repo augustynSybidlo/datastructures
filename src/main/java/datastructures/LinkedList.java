@@ -58,6 +58,20 @@ public class LinkedList<T> {
         }
     }
 
+    public void delete(T data) {
+
+        Node pointer = head;
+        while (pointer != null) {
+            Node temp = pointer;
+            if (temp.data.equals(data)) {
+                pointer = temp.next;
+                decrementLength();
+            } else {
+                pointer = pointer.next;
+            }
+        }
+    }
+
 
     private void incrementLength() {
         this.length++;
