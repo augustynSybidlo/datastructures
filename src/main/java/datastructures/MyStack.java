@@ -16,4 +16,16 @@ public class MyStack<E> {
         this.stack = stack;
     }
 
+    public void push(E data) throws StackOverflowError {
+        checkAvailableSpace();
+        stack[++top] = data;
+    }
+
+
+    public int checkAvailableSpace() throws StackOverflowError {
+        int availableSpace = size - (top + 1);
+        if (availableSpace == 0) throw new StackOverflowError();
+        return availableSpace;
+    }
+
 }
