@@ -27,11 +27,19 @@ public class MyStack<E> {
         return stack[top--];
     }
 
+    public E peek() throws EmptyStackException {
+        if (isEmpty()) throw new EmptyStackException();
+        return stack[top];
+    }
 
     public int checkAvailableSpace() throws StackOverflowError {
         int availableSpace = size - (top + 1);
         if (availableSpace == 0) throw new StackOverflowError();
         return availableSpace;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     private boolean isEmpty() {
