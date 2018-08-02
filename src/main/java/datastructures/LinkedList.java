@@ -46,6 +46,18 @@ public class LinkedList<T> {
         }
     }
 
+    public void addFirst(T newData) {
+        Node temp;
+
+        if (head == null) {
+            head = new Node(newData);
+        } else {
+            temp = head;
+            head = new Node(newData);
+            head.next = temp;
+        }
+    }
+
 
     private void incrementLength() {
         this.length++;
