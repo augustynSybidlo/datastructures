@@ -21,8 +21,12 @@ public class CustomQueue {
         incrementSize();
     }
 
+    public String peek() throws EmptyQueueException {
+        if (isEmpty()) throw new EmptyQueueException("Queue is Empty");
+        return head.value;
+    }
 
-    
+
     private void incrementSize() {
         size++;
     }
