@@ -31,6 +31,22 @@ public class LinkedList<T> {
         return result;
     }
 
+    public void add(T newData) {
+
+        Node pointer;
+
+        if (head == null) {
+            head = new Node(newData);
+        } else {
+            pointer = head;
+            while (pointer.next != null) {
+                pointer = pointer.next;
+            }
+            pointer.next = new Node(newData);
+        }
+    }
+
+
     private void incrementLength() {
         this.length++;
     }
