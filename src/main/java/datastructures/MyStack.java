@@ -1,6 +1,7 @@
 package datastructures;
 
 import java.lang.reflect.Array;
+import java.util.EmptyStackException;
 
 public class MyStack<E> {
 
@@ -21,11 +22,20 @@ public class MyStack<E> {
         stack[++top] = data;
     }
 
+    public E pop() throws EmptyStackException {
+        if (isEmpty()) throw new EmptyStackException();
+        return stack[top--];
+    }
+
 
     public int checkAvailableSpace() throws StackOverflowError {
         int availableSpace = size - (top + 1);
         if (availableSpace == 0) throw new StackOverflowError();
         return availableSpace;
+    }
+
+    private boolean isEmpty() {
+        return top == -1;
     }
 
 }
