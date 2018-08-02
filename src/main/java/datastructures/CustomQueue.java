@@ -39,8 +39,9 @@ public class CustomQueue {
         return size == 0;
     }
 
-
-
+    public int queueSize() {
+        return size;
+    }
 
     private void incrementSize() {
         size++;
